@@ -40,10 +40,18 @@ if($text){
 
 **Format:** São aceito arquivos nos formatos: mp3, mp4, mpeg, mpga, m4a, wav, e webm
 
-**Tip:** Para reduzir o tamanho do arquivo você pode usar alguma ferramenta como FFmpeg, veja o exemplo:
+**Tip:** Para reduzir o tamanho do arquivo você pode usar alguma ferramenta como FFmpeg, veja duas possibilidades nos exemplos abaixo:
 
 ```shell
 ffmpeg -i audios/agi.mp4 -vn -map_metadata -1 -ac 1 -c:a libopus -b:a 12k -application voip audio.ogg
 ```
 
+```shell
+ffmpeg -i  agi.mp4  -ar 16000  -ac 1  -map 0:a: output.mp3
+```
+
+
 [Exemplo retirado daqui](https://community.openai.com/t/whisper-api-increase-file-limit-25-mb/566754#post_2)
+
+[Exemplo Groq](https://console.groq.com/docs/speech-text#preprocessing-audio-files)
+
